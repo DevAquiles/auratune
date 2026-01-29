@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <title>Memorizing</title>
+</head>
+<style>
+    body {
+        background-image: url(backmemo.jpg);
+    }
+
+    /* Contêiner pai para centralizar */
+    .container {
+        display: flex;
+        justify-content: center;
+        /* Centraliza horizontalmente */
+        align-items: center;
+        /* Centraliza verticalmente */
+        height: 90vh;
+        /* Define a altura total da tela */
+        background-image: url(backmemo.jpg);
+    }
+
+    /* Div com borda curva */
+    .box {
+        width: 320px;
+        height: 220px;
+        border-radius: 10px;
+        background-color: rgb(71, 137, 229);
+        /* Borda curva (raio de 20px) */
+        /* Para borda redonda (círculo), use 50% em um div quadrado [14] */
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 10px 40px;
+        background-color: blueviolet;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        /* Transição suave */
+        transition: box-shadow 0.3s ease-in-out, background-color 0.3s;
+    }
+
+    a:hover {
+        /* box-shadow: horizontal vertical desfoque cor */
+        box-shadow: 0 0 15px #007bff, 0 0 30px #007bff;
+        background-color: #2e007d;
+        /* Clareia levemente o fundo */
+    }
+</style>
+
+<body>
+    <a style="color: rgb(255, 255, 255);" href="musica.html"><b>Voltar</b></a>
+    <div class="container">
+        <div class="box">
+            <img src="memo.jpeg" alt="imagem da musica" width="170">
+            <p style="color: white;"><b>Memorizing</b></p> <audio controls>
+                <source src="memo.mp3" type="audio/mpeg  ">
+
+        </div>
+    </div>
+</body>
+
+</html>

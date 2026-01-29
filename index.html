@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Lateral Retrátil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: #0f0c29;
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Botão de Abrir/Fechar */
+        .btn-expandir {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .btn-expandir:hover {
+            background: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Estrutura do Menu */
+        .sidebar {
+            position: fixed;
+            left: -280px;
+            /* Escondido por padrão */
+            top: 0;
+            width: 250px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 80px 20px 20px 20px;
+            transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        /* Classe que será adicionada via JS */
+        .sidebar.aberto {
+            left: 0;
+        }
+
+        /* Itens do Menu */
+        .nav-item {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 15px 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        /* Efeito de brilho ao passar o mouse */
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.6s;
+        }
+
+        .nav-item:hover::before {
+            left: 100%;
+        }
+
+        .nav-item i {
+            color: #00d4ff;
+            text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Overlay para escurecer o fundo quando o menu abrir */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 998;
+        }
+
+        .overlay.ativo {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="logo.png" width="200">
+    </div>
+    <div class="texto">
+        <br><br>
+        <h1>AuraTune</h1>
+        <p>Músicas para Farmar Aura</p>
+    </div>
+<br><br><br><br><br><br><br><br>
+    <div class="irmusicas">
+        <a href="musica.html">Ir para lista de Músicas</a>
+    </div>
+
+    <button class="btn-expandir" onclick="toggleMenu()">
+        <i class="fas fa-bars" id="icone-btn"></i>
+    </button>
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <nav class="sidebar" id="sidebar">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="musica.html" class="nav-item">
+            <i class="fas fa-music"></i>
+            <span>Músicas</span>
+        </a>
+
+        <a href="https://devaquiles.github.io/" target="_blank" class="nav-item">
+            <i class="fas fa-briefcase"></i>
+            <span>Meu Portfólio</span>
+        </a>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const icone = document.getElementById('icone-btn');
+
+            sidebar.classList.toggle('aberto');
+            overlay.classList.toggle('ativo');
+
+            // Troca o ícone de barras para um "X" quando abrir
+            if (sidebar.classList.contains('aberto')) {
+                icone.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icone.classList.replace('fa-times', 'fa-bars');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

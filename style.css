@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    text-align: center;
+}
+
+.logo img {
+    border: 10px solid #001aff;
+    border-radius: 50%;
+    padding: 5px;
+    animation: brilho_e_move 1.5s ease infinite alternate;
+}
+
+@keyframes brilho_e_move {
+    to {
+        transform: translateY(20px);
+        box-shadow: 0px 0px 10px cyan, 0px 0px 20px cyan;
+    }
+}
+
+h1 {
+    color: white;
+    font-size: 4em;
+    text-shadow: 0 0 10px #fff, 0 0 20px #00B8D4, 0 0 30px #00B8D4, 0 0 40px #00B8D4;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 1em;
+    text-shadow: 0 0 10px #fff, 0 0 20px #00B8D4, 0 0 30px #5d27da, 0 0 40px #220088;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px 40px;
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    /* Transição suave */
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s;
+}
+
+a:hover {
+    /* box-shadow: horizontal vertical desfoque cor */
+    box-shadow: 0 0 15px #007bff, 0 0 30px #007bff;
+    background-color: #2e007d;
+    /* Clareia levemente o fundo */
+}
+
+.irmusicas {
+    text-align: center;
+}
