@@ -32,7 +32,6 @@
     text-align: center;
         }
 
-        /* Botão de Abrir/Fechar */
         .btn-expandir {
             position: fixed;
             top: 20px;
@@ -53,11 +52,9 @@
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
         }
 
-        /* Estrutura do Menu */
         .sidebar {
             position: fixed;
             left: -280px;
-            /* Escondido por padrão */
             top: 0;
             width: 250px;
             height: 100%;
@@ -70,12 +67,10 @@
             z-index: 999;
         }
 
-        /* Classe que será adicionada via JS */
         .sidebar.aberto {
             left: 0;
         }
 
-        /* Itens do Menu */
         .nav-item {
             text-decoration: none;
             color: rgba(255, 255, 255, 0.7);
@@ -96,8 +91,7 @@
             background: rgba(255, 255, 255, 0.1);
             transform: translateX(10px);
         }
-
-        /* Efeito de brilho ao passar o mouse */
+        
         .nav-item::before {
             content: '';
             position: absolute;
@@ -118,7 +112,6 @@
             text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
         }
 
-        /* Overlay para escurecer o fundo quando o menu abrir */
         .overlay {
             position: fixed;
             top: 0;
